@@ -60,6 +60,7 @@ const GRVE = GRVE || {};
       GRVE.pageSettings.init()
       GRVE.basicElements.init()
       GRVE.phoneMask.init()
+      GRVE.navbar.init()
       GRVE.ajax.init()
     }
   }
@@ -322,6 +323,85 @@ const GRVE = GRVE || {};
         from: from,
         hide_min_max: true,
       });
+    }
+  }
+
+    // # Navbar Collapse
+  // ============================================================================= //
+  GRVE.navbar = {
+    init: function() {
+      this.$toggler =             $('[data-toggler]')
+      this.target =               this.$toggler.data('toggler')
+      this.$navbar =              $(this.target)
+      this.$backdrop =            this.$navbar.find('.mp-menu__backdrop')
+      this.$navbarLink =          this.$navbar.find('a.menu__link[href*="#"]:not([href="#"])')
+      this.$close =               this.$navbar.find(".mp-menu__close")
+      this.navbarTogglerOpen =    "nav-toggler--open"
+      this.navbarOpen =           "mp-menu--open"
+      this.$nav =                 $(".nav")
+      this.navOpen =              "nav--open"
+      const self =                this
+      
+      this.$toggler.on('click').on('click', function() {
+        $(this).toggleClass(self.navbarTogglerOpen)
+        if (self.$navbar.hasClass(self.navbarOpen)) {
+          self.showNavbar('hide')
+        } else {
+          self.showNavbar('show')
+        }
+      })
+
+      $(".sm-nav__link--dropdown").on("click", function(e) {
+        const $this = $(this)
+        const activeDropdown = 'sm-nav__link--active'
+        const isOpen = $this.is(`.${activeDropdown}`) ? true : false
+        const $dropdown = $this.siblings(".sm-nav")
+
+        if (isOpen) {
+          $this.removeClass(activeDropdown)
+          $dropdown.clearQueue().finish().slideUp()
+        } else {
+          $this.addClass(activeDropdown)
+          $dropdown.clearQueue().finish().slideDown()
+        }
+        e.preventDefault()
+      })
+
+
+      this.$backdrop.on('click').on('click', function() {
+        self.showNavbar('hide')
+      })
+
+      this.$close.on('click').on('click', function() {
+        self.showNavbar('hide')
+      })
+    },
+    showNavbar: function(status) {
+      if (status === 'hide') {
+        this.$toggler.removeClass(this.navbarTogglerOpen)
+        this.$navbar.removeClass(this.navbarOpen)
+        this.$nav.removeClass(this.navOpen)
+      } else if (status === 'show') {
+        this.$toggler.addClass(this.navbarTogglerOpen)
+        this.$navbar.addClass(this.navbarOpen)
+        this.$nav.addClass(this.navOpen)
+      }
+    },
+    navbarSticky: function() {
+      var $nav =         $(".js-sticky")
+      var target =       $nav.data('nav-target')
+      var $header =      $(target)
+      var triggerTop =   $header.height()
+
+      if (triggerTop === undefined) {
+        return
+      }
+
+      if (triggerTop < $(window).scrollTop() ) {
+        $nav.addClass("nav--shrink")
+        return
+      } 
+      $nav.removeClass("nav--shrink")
     }
   }
 

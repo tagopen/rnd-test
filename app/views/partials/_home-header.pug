@@ -1,0 +1,46 @@
+header.header
+  .container
+    .row.align-items-center.justify-content-center.justify-content-md-between
+      .col-17.col-md-auto
+        figure.logo.header__logo
+          img.logo__img.img-fluid(src="/img/logo/logo.png", alt="Legal Lawyer Group")
+      .col-7.d-md-none.text-right
+        button.header__btn-toggle.btn.btn--simple(type='button', data-toggler='#mp-menu')
+          svg#burger.svg.svg--burger.btn__icon(version='1.1', role='img', xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 28 16', width='100%', height='100%')
+            path(stroke='currentColor', stroke-width='2', d='M0 1h28M0 8h28M0 15h28')
+      .col-md-auto
+        .info.header__info
+          p.info__item.hd-text Special Law Agency for Real Estate
+          p.info__item
+            a.hd-phone.info__phone(href="tel: 442392812291") 
+              i.fa.fa-phone.hd-phone__icon
+              | 442 - 392 812 291
+          nav.info__item.hd-nav
+            a.hd-nav__item(href="#Meyer") Dr. jur. Peter Meyer
+            a.hd-nav__item(href="#Maggon") Dr. Judith Maggon 
+            a.hd-nav__item(href="#Mori") Dr. Alena Mori
+
+
+nav#mp-menu.mp-menu.header__menu(role='navigation')
+  .container
+    .mp-menu__backdrop
+    .mp-menu__box
+      button.btn.btn--simple.mp-menu__close.d-md-none(type='button')
+        svg#close.svg.svg--close.btn__icon(version='1.1', role='img', xmlns='http://www.w3.org/2000/svg', fill='none', viewBox='0 0 18.898 19.311', width='100%', height='100%')
+          g(fill-opacity='0')
+            path(d='M0 0h18.898v19.311H0z')
+            path(d='M0 0h18.898v19.311H0z')
+            path(d='M0 0h18.898v19.311H0z')
+          path(fill='currentColor', d='M13.439 5.58a.65.65 0 0 0-.924 0L9.45 8.711 6.404 5.579a.65.65 0 0 0-.923 0 .684.684 0 0 0 0 .944l3.044 3.133-3.065 3.11a.684.684 0 0 0 0 .945c.126.129.294.193.462.193s.336-.064.461-.193L9.45 10.6l3.045 3.133a.647.647 0 0 0 .924 0 .684.684 0 0 0 0-.945l-3.045-3.133 3.066-3.11a.711.711 0 0 0 0-.966z')
+          path(fill='currentColor', d='M9.449 0C4.22 0-.001 4.313-.001 9.656S4.22 19.31 9.45 19.31s9.45-4.313 9.45-9.655S14.676 0 9.448 0zm5.753 15.535A7.978 7.978 0 0 1 9.45 17.96a8.014 8.014 0 0 1-5.753-2.425c-1.533-1.566-2.373-3.648-2.373-5.88 0-2.21.84-4.312 2.373-5.878A7.979 7.979 0 0 1 9.45 1.352c2.162 0 4.22.858 5.753 2.425 1.533 1.566 2.373 3.647 2.373 5.879 0 2.21-.84 4.313-2.373 5.879z')
+      ul.mp-menu__list.sm-nav
+        li.sm-nav__item
+          a.sm-nav__link(href='#') Home
+        li.sm-nav__item
+          a.sm-nav__link(href='#about') About us
+        li.sm-nav__item
+          a.sm-nav__link(href='#benefits') Out benefits
+        li.sm-nav__item
+          a.sm-nav__link(href='#our') Our law office
+        li.sm-nav__item
+          a.sm-nav__link(href='#reviews') Our clients
