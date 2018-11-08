@@ -93,7 +93,7 @@
 
 .sub-heading
   margin-bottom: 18px
-  font: 700 44px/52px $main-font
+  font: 700 36px/42px $main-font
   color: #242424
 
 +comment("home page style")
@@ -106,22 +106,14 @@
   +r($md)
     padding: 30px 0
     text-align: left
-  +r($lg)
-    padding: 60px 0
   &__logo
     margin:
-      bottom: 30px
-    +r($md)
-      margin:
-        bottom: 0
-  &__info
-    margin:
-      bottom: 30px
+      bottom: 25px
     +r($md)
       margin:
         bottom: 0
   &__btn-toggle
-    margin-bottom: 30px
+    margin-bottom: 25px
     font-size: 30px
 .logo
   max-width: 200px
@@ -135,16 +127,10 @@
 .hd-text
   font: 400 16px/18px $main-font
   color: #5a5a5a
-  +r($lg)
-    font-size: 20px
-    line-height: 22px
 .hd-phone
   @extend .link
   font: 400 16px/18px $main-font
   color: #5a5a5a
-  +r($lg)
-    font-size: 20px
-    line-height: 22px
   &__icon
     margin-right: 10px
     color: #000
@@ -169,9 +155,6 @@
     color: #000
     +r($md)
       border-right: 1px solid #000
-    +r($lg)
-      font-size: 20px
-      line-height: 22px
     &:last-of-type
       border-right: none
 
@@ -231,8 +214,8 @@
       background-color: transparent
   &__list
     padding: 
-      top: 60px
-      bottom: 60px
+      top: 30px
+      bottom: 30px
     +r($md)
       margin: 
         bottom: 0
@@ -321,19 +304,17 @@
 
 .about
   padding: 30px 0
-  +r($lg)
-    padding: 60px 0
 .ab-text
-  margin-bottom: 20px
-  font: 400 18px/22px $main-font
+  margin-bottom: 15px
+  font: 400 13px/17px $main-font
   color: #000
 .ab-list
   margin-bottom: 20px
   padding-left: 0
   list-style-type: none
   &__item
-    margin-bottom: 20px
-    font: 700 18px/22px $main-font
+    margin-bottom: 15px
+    font: 700 13px/17px $main-font
     color: #000
     &:before
       content: "\f046"
@@ -345,3 +326,48 @@
       -webkit-font-smoothing: antialiased
       -moz-osx-font-smoothing: grayscale
 
++comment("section benefits styles")
+
+.benefits
+  padding: 30px 0
+  &__header
+    margin-bottom: 50px
+    text-align: center
+    &:after
+      content: ''
+      display: block
+      margin: 50px auto 0
+      width: 80px
+      height: 1px
+      background-color: #000
+  &__card
+    margin-bottom: 15px
+.bn-text
+  font: 700 17px/20px $main-font
+  color: #000
+.bn-card
+  display: flex
+  flex-wrap: wrap
+  &__icon
+    +col(auto)
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+    background-color: #000
+    margin-right: 20px
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    color: #fff
+    &:after
+      content: "\f046"
+      display: inline-block
+      font: normal normal normal 20px/1 FontAwesome
+      font-size: inherit
+      text-rendering: auto
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+
+  &__content
+    +col
