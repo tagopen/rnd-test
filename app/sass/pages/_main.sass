@@ -382,3 +382,89 @@
     margin-bottom: 30px
   &__list
     margin-bottom: 30px
+
++comment("section footer style")
+
+.footer
+  position: relative
+  padding: 25px 0
+  background-color: #1B1B1B
+  z-index: 1
+  +r($lg)
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 65px
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25)
+      z-index: -1
+  &__col
+    margin:
+      bottom: 15px
+  &__heading
+    margin:
+      bottom: 15px
+    +r($lg)
+      margin: 
+        bottom: 60px
+  &__text
+    color: #4E4E4E
+    .fa
+      margin-right: 10px
+    &--phone
+      .fa
+        font-size: 22px
+
+.ft-heading
+  font: 700 13px/17px $main-font
+  color: #fff
+  text-transform: uppercase
+
+.ft-list
+  padding:
+    left: 0
+  list-style-type: none
+  &__item
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    margin-bottom: 15px
+    font: 400 13px/17px $main-font
+    color: #4e4e4e
+    &:before
+      content: "\f105"
+      display: inline-block
+      font: normal normal normal 14px/1 FontAwesome
+      font-size: inherit
+      text-rendering: auto
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale
+  &__link
+    @extend .link
+    padding:
+      left: 10px
+    font: 400 13px/17px $main-font
+    color: #4e4e4e
+    &:hover,
+    &:active
+      padding:
+        left: 20px
+
+.ft-card
+  display: flex
+  flex-wrap: wrap
+  margin: 
+    left: -1px
+    right: -1px
+  &__item
+    +col(6)
+    padding: 
+      left: 1px
+      right: 1px
+.ft-item
+  margin-bottom: 4px
+  &__img
+    height: 65px
+    object-fit: cover
